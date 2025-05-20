@@ -9,19 +9,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-    <title>Ajay Kumar - Portfolio</title>
+    <style>
+        .profile-section-img {
+            border-radius: 50%;
+            border: 3px solid rgb(17, 255, 1);
+            box-shadow: 0 0 25px 10px rgba(17, 255, 1, 0.5);
+
+        }
+    </style>    
 </head>
-<body>
-    Hello, github page!👱‍♂️
-    <div class="container">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<body data-bs-theme="dark">
+   <div class="container m-5 p-5">
+    <div class="row">
+          <div class="col-md section-profile align-item-center justify-align-center d-flex">
+               <div class=" container">
+                <img src="Statics\sample_image_profile.png" alt="" width="250" height="250" class="profile-section-img">
+               </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="col-md section-about mt-3">
+            <p style="color:rgb(224, 245, 33)" class="mb-1">Data Scientist</p>
+            <h1>Hi, I'm Ajay Kumar</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam aliquid similique veniam a asperiores id incidunt beatae maxime, eos dicta dolorum illo quas! Architecto, aliquam praesentium optio fugiat temporibus inventore!</p>
         </div>
+      
     </div>
+   </div>
 </body>
 </html>
