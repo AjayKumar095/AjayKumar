@@ -1,7 +1,7 @@
 :root {
     --profile-section-bg: #21232b;
     --profile-section-accent: #3a3f4b;
-    --profile-image-border: #4fc3f7;
+    --profile-image-shadow: #4fc3f7;
 
     --grid-section-bg: #23272f;
     --grid-section-border: #31343a;
@@ -12,7 +12,7 @@
 
     --about-section-bg: #1c1e24;
     --about-section-accent: #2a2d34;
-    
+
     --background-color: #181a1b;
     --text-color: #e8e6e3;
     --primary-color: #1e90ff;
@@ -20,9 +20,9 @@
     --accent-color: #ff9800;
     --border-color: #2c2f36;
     --card-bg: #22252a;
-    --card-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    --card-shadow: 0 2px 8px rgba(255, 152, 0, 0.7);
     --section-bg: #1a1d21;
-    --section-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    --section-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     --link-color: #4fc3f7;
     --error-color: #ff5252;
     --success-color: #4caf50;
@@ -38,21 +38,36 @@ body {
     color: var(--link-color);
     text-decoration: none;
 }
+
 .custom-link:hover {
     color: var(--primary-color);
     text-decoration: underline;
 }
 
 .card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
+    background-color: var(--grid-item-bg);
+    border: 1px solid var(--card-image-border);
     box-shadow: var(--card-shadow);
     padding: 16px;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: var(--text-color);
 }
- .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-        }
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
+}
+
+.profile-section-img {
+    border-radius: 0 30px 0 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+
+}
+
+.profile-section-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.5);
+
+}
