@@ -1,73 +1,32 @@
-:root {
-    --profile-section-bg: #21232b;
-    --profile-section-accent: #3a3f4b;
-    --profile-image-shadow: #4fc3f7;
+ :root {
+      --bg-color: #0f0f1a; /* Dark background for the page rgba(0, 0, 0, 0.6);*/
+      --text-color: #ffffff;
+      --accent-color: #ae63e4;
+      --blur-bg: rgba(255, 255, 255, 0.05);
+    }
 
-    --grid-section-bg: #23272f;
-    --grid-section-border: #31343a;
-    --grid-item-bg: #262a33;
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+    }
 
-    --card-section-bg: #24262e;
-    --card-image-border: #ff9800;
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: var(--bg-color);
+      
+    }
 
-    --about-section-bg: #1c1e24;
-    --about-section-accent: #2a2d34;
+    .navbar-brand {
+      color: var(--accent-color) !important;
+      font-weight: bold;
+    }
 
-    --background-color: #181a1b;
-    --text-color: #e8e6e3;
-    --primary-color: #1e90ff;
-    --secondary-color: #23272f;
-    --accent-color: #ff9800;
-    --border-color: #2c2f36;
-    --card-bg: #22252a;
-    --card-shadow: 0 2px 8px rgba(255, 152, 0, 0.7);
-    --section-bg: #1a1d21;
-    --section-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-    --link-color: #4fc3f7;
-    --error-color: #ff5252;
-    --success-color: #4caf50;
-}
+    .nav-link {
+      color: var(--text-color) !important;
+    }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Arial', sans-serif;
-}
+    .nav-link:hover {
+      color: var(--accent-color) !important;
 
-.custom-link {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
-.custom-link:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-.card {
-    background-color: var(--grid-item-bg);
-    border: 1px solid var(--card-image-border);
-    box-shadow: var(--card-shadow);
-    padding: 16px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: var(--text-color);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
-}
-
-.profile-section-img {
-    border-radius: 0 30px 0 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease;
-
-}
-
-.profile-section-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.5);
-
-}
+    }
