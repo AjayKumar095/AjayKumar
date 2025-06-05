@@ -12,7 +12,53 @@
     <link rel="stylesheet" href="Statics/CSS/customcolor.css">
 
     <style>
-
+        .profile-frame {
+         
+           position: relative;
+        }
+   
+        .frame {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            border: 1px solid var(--accent-color);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(174, 99, 228, 0.5);
+        }
+        .frame-box-1 {
+            width: 170px;
+            height: 170px;
+            position: absolute; 
+            
+        }
+         .frame-box-2 {
+            width: 200px;
+            height: 200px;
+            position: absolute;  
+            transform: translate(-50%, -50%) rotate(42deg); 
+        }
+   
+         .frame-box-3 {
+            width: 230px;
+            height: 230px;
+            position: absolute;
+             transform: translate(-50%, -50%) rotate(-20deg);     
+        }
+   
+         .frame-box-4 {
+            width: 260px;
+            height: 260px;
+            position: absolute;  
+             transform: translate(-50%, -50%) rotate(-70deg);  
+        }
+   
+         .frame-box-5 {
+            width: 290px;
+            height: 290px;
+            position: absolute;   
+             transform: translate(-50%, -50%) rotate(-38deg);  
+        }
+   
    
       
     </style>
@@ -39,7 +85,32 @@
     </nav>
 
 
+<div class=" container pt-5 pb-5 mb-5 mt-5">
 
+    <div class="row mt-5">
+        <div class="col-5 d-flex justify-content-center ">
+
+           <div class="profile-frame">
+               <div class="frame-box-1 frame p-1">
+                <img src="Statics/Images/sample_image_profile.png"  class="img-fluid" alt="" style="border-radius: 50%; box-shadow: 0 0 20px rgba(174, 99, 228, 0.5);">
+               </div>
+               <div class="frame-box-2 frame"></div>
+               <div class="frame-box-3 frame"></div>
+               <div class="frame-box-4 frame"></div>
+               <div class="frame-box-5 frame"></div>
+           </div>
+            
+           
+
+           
+        </div>
+        <div class="col-7">
+            <span style="color:greenyellow;">Data Science Aspirant</span>
+            <h2>Hii, I'm <span style="color: var(--accent-color);">Ajay Kumar</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci expedita saepe nam quos quam natus! Nam necessitatibus provident illum ipsum ad commodi illo, maxime possimus, nostrum laborum magni expedita!</p>
+        </div>
+    </div>
+</div>
 
 </body>
 
