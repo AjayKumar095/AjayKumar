@@ -11,11 +11,15 @@
   <link rel="stylesheet" href="Statics/CSS/customcolor.css" />
 
   <style>
+    :root {
+      --blur-bg: rgba(255, 255, 255, 0.05);
+    }
+
     .profile-frame {
       position: relative;
       width: 300px;
       height: 300px;
-   
+
     }
 
     .frame {
@@ -30,31 +34,31 @@
     .frame-box-1 {
       width: 45%;
       height: 45%;
- 
+
     }
 
     .frame-box-2 {
       width: 55%;
       height: 55%;
       transform: translate(-50%, -50%) rotate(42deg);
-   
+
     }
 
     .frame-box-3 {
       width: 65%;
       height: 65%;
       transform: translate(-50%, -50%) rotate(-20deg);
-    
+
     }
 
     .frame-box-4 {
       width: 75%;
       height: 75%;
       transform: translate(-50%, -50%) rotate(-70deg);
-   
+
     }
 
-  
+
 
     .profile-img {
       border-radius: 50%;
@@ -64,6 +68,45 @@
       box-shadow: 0 0 20px rgba(174, 99, 228, 0.5);
     }
 
+    .elements {
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(20px);
+      opacity: 0.3;
+    }
+
+    .element-1 {
+      width: 300px;
+      height: 300px;
+
+      transform: translate(120%, 25%);
+    }
+
+    .element-2 {
+      width: 250px;
+      height: 250px;
+      transform: translate(-240%, -55%);
+      background-color: rgb(239, 8, 124);
+    }
+
+    .element-3 {
+      width: 250px;
+      height: 250px;
+      transform: translate(180%, -30%);
+
+    }
+
+    .glass-card {
+      background: var(--blur-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
   </style>
 </head>
 
@@ -87,29 +130,39 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container ">
-    <div class="row pt-5 pb-5">
-      <!-- Profile Section -->
-      <div class="col-12 col-md-5 d-flex justify-content-center p-2  ">
-        <div class="profile-frame ">
-         
-          <div class="frame-box-4 frame"></div>
-          <div class="frame-box-3 frame"></div>
-          <div class="frame-box-2 frame"></div>
-          <div class="frame-box-1 frame p-1">
-            <img src="Statics/Images/sample_image_profile.png" alt="Profile" class="profile-img" />
+  <div class=" container-fluid d-flex position-relative align-items-center justify-content-center">
+
+    <div class="bg-warning elements element-1"></div>
+    <div class=" elements element-2"></div>
+    <div class="bg-info elements element-3"></div>
+
+
+    <div class="container  rounded mt-5 mb-5 glass-card">
+      <div class="row pt-5 pb-5">
+        <!-- Profile Section -->
+        <div class="col-12 col-md-5 d-flex justify-content-center p-2  ">
+          <div class="profile-frame ">
+
+            <div class="frame-box-4 frame"></div>
+            <div class="frame-box-3 frame"></div>
+            <div class="frame-box-2 frame"></div>
+            <div class="frame-box-1 frame p-1">
+              <img src="Statics/Images/sample_image_profile.png" alt="Profile" class="profile-img" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Text Section -->
-      <div class="col-12 col-md-7 p-2 pt-5">
-        <span style="color:greenyellow;">Data Science Aspirant</span>
-        <h2 class="mt-3">Hi, I'm <span style="color: var(--accent-color);">Ajay Kumar</span></h2>
-        <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci expedita saepe nam quos quam natus! Nam necessitatibus provident illum ipsum ad commodi illo, maxime possimus, nostrum laborum magni expedita!</p>
-        <a href="cv.pdf" class="btn btn-sm" style="background: var(--accent-color); color: #fff;" >View Projects</a>
-        <a href="#projects" class="btn btn-outline-light btn-sm" download>Download CV</a>
-        
+        <!-- Text Section -->
+        <div class="col-12 col-md-7 p-2 pt-5">
+          <span style="color:greenyellow;">Data Science Aspirant</span>
+          <h2 class="mt-3">Hi, I'm <span style="color: var(--accent-color);">Ajay Kumar</span></h2>
+          <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci expedita saepe
+            nam quos quam natus! Nam necessitatibus provident illum ipsum ad commodi illo, maxime possimus, nostrum
+            laborum magni expedita!</p>
+          <a href="cv.pdf" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">View Projects</a>
+          <a href="#projects" class="btn btn-outline-light btn-sm" download>Download CV</a>
+
+        </div>
       </div>
     </div>
   </div>
