@@ -1,135 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Accurate Solar Orbit Animation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clip-Path Shape</title>
   <style>
-    :root {
-      --bg: #0a0a0a;
-    }
-
     body {
       margin: 0;
-      background: var(--bg);
+      background: #0d0d0d;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
     }
 
-    .solar-system {
+    .clip-box {
+      width: 90vw;
+      max-width: 900px;
+      height: 400px;
+      background: linear-gradient(to right, #ffffff, #d1d1ff);
       position: relative;
-      width: 500px;
-      height: 500px;
+      padding: 2rem;
+      clip-path: path('M40 0 H860 Q900 0 900 40 V360 Q900 400 860 400 H40 Q0 400 0 360 V40 Q0 0 40 0 Z');
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: clip-path 0.3s ease;
     }
 
-    .orbit-center{
-        position: absolute;
-        background-color: black;
-        width: 50px;
-        height: 50px;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    .clip-box h1 {
+      font-family: sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      color: #000;
     }
 
-    .orbit-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border: 2px dotted #ffffff22;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .ring1 { width: 160px; height: 160px; }
-    .ring2 { width: 240px; height: 240px; }
-    .ring3 { width: 320px; height: 320px; }
-    .ring4 { width: 400px; height: 400px; }
-
-    .orbit {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform-origin: center center;
-      animation: rotate linear infinite;
-    }
-
-    .orbit1 { animation-duration: 6s; }
-    .orbit2 { animation-duration: 10s; }
-    .orbit3 { animation-duration: 14s; }
-    .orbit4 { animation-duration: 18s; }
-
-    .dot {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border-radius: 50%;
-    }
-
-    .dot1 {
-      width: 15px;
-      height: 15px;
-      background-color: #ff4c4c;
-      transform: translate(-50%, -90px); /* Radius */
-    }
-
-    .dot2 {
-      width: 20px;
-      height: 20px;
-      background-color: #4c9aff;
-      transform: translate(-50%, -130px);
-    }
-
-    .dot3 {
-      width: 25px;
-      height: 25px;
-      background-color: #ffe14c;
-      transform: translate(-50%, -170px);
-    }
-
-    .dot4 {
-      width: 30px;
-      height: 30px;
-      background-color: #a64cff;
-      transform: translate(-50%, -210px);
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .clip-box p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #333;
     }
   </style>
 </head>
 <body>
-
-<div class="solar-system">
-  <!-- Orbit center-->
-  <div class="orbit-center"></div>
-  <!-- Orbit rings -->
-  <div class="orbit-ring ring1"></div>
-  <div class="orbit-ring ring2"></div>
-  <div class="orbit-ring ring3"></div>
-  <div class="orbit-ring ring4"></div>
-
-  <!-- Orbiting dots -->
-  <div class="orbit orbit1">
-    <div class="dot dot1"></div>
+  <div class="clip-box">
+    <h1>UI Portfolio 2020-2021</h1>
+    <p>This is a custom clipped div with rounded, curved corners using clip-path.</p>
   </div>
-  <div class="orbit orbit2">
-    <div class="dot dot2"></div>
-  </div>
-  <div class="orbit orbit3">
-    <div class="dot dot3"></div>
-  </div>
-  <div class="orbit orbit4">
-    <div class="dot dot4"></div>
-  </div>
-
-</div>
-
 </body>
 </html>

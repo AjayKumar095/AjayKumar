@@ -1,32 +1,130 @@
  :root {
-      --bg-color: #0f0f1a; /* Dark background for the page rgba(0, 0, 0, 0.6);*/
-      --text-color: #ffffff;
-      --accent-color: #ae63e4;
-      --blur-bg: rgba(255, 255, 255, 0.05);
-    }
+   --bg-color: #0b0b16;
+   --text-color: #ffffff;
+   --accent-color: #ae63e4;
+   --blur-bg: rgba(255, 255, 255, 0.05);
+  
+ }
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Poppins', sans-serif;
-    }
+ body {
+   background-color: var(--bg-color);
+   color: var(--text-color);
+   font-family: 'Poppins', sans-serif;
+ }
 
-    .navbar {
-      backdrop-filter: blur(10px);
-      background-color: var(--bg-color);
-      
-    }
+ .navbar {
+   backdrop-filter: blur(10px);
+ }
 
-    .navbar-brand {
-      color: var(--accent-color) !important;
-      font-weight: bold;
-    }
+ .navbar-brand {
+   color: var(--accent-color) !important;
+   font-weight: bold;
+ }
 
-    .nav-link {
-      color: var(--text-color) !important;
-    }
+ .nav-link {
+   color: var(--text-color) !important;
+ }
 
-    .nav-link:hover {
-      color: var(--accent-color) !important;
+ .nav-link:hover {
+   color: var(--accent-color) !important;
 
-    }
+ }
+
+ .profile-frame {
+   width: 250px;
+   height: 250px;
+ }
+
+ .profile-img {
+   border-radius: 50%;
+   width: 100%;
+   height: 100%;
+   box-shadow: 0 0 20px rgba(174, 99, 228, 0.5);
+ }
+
+ .glass-card {
+   background: var(--blur-bg);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(15px);
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+   padding: 2rem;
+   z-index: 10;
+   position: relative;
+ }
+
+ .element {
+   border-radius: 50%;
+   filter: blur(20px);
+   opacity: 0.3;
+   position: absolute;
+   z-index: 0;
+ }
+
+ /* Desktop Sizes and Positions */
+ .element-1 {
+   width: 20vw;
+   height: 20vw;
+   top: -5%;
+   left: -5%;
+   background-color: rgb(239, 8, 124);
+ }
+
+ .element-2 {
+   width: 15vw;
+   height: 15vw;
+   bottom: 5%;
+   right: 20%;
+   background-color: rgb(0, 212, 255);
+ }
+
+ .element-3 {
+   width: 20vw;
+   height: 20vw;
+   top: 7%;
+   right: 5%;
+   background-color: rgb(255, 200, 0);
+ }
+
+ .profile-container {
+   top: 100px;
+ }
+
+ /* Smaller screens: Resize and reposition */
+ @media (max-width: 768px) {
+   .profile-container {
+     top: 30px;
+   }
+
+   .element-1 {
+     width: 50vw;
+     height: 50vw;
+     top: 0%;
+     left: -5%;
+   }
+
+   .element-2 {
+     width: 30vw;
+     height: 30vw;
+     bottom: 5%;
+     right: 10%;
+   }
+
+   .element-3 {
+     width: 35vw;
+     height: 35vw;
+     top: 40%;
+     left: 40%;
+     transform: translateX(-50%);
+   }
+
+   .glass-card {
+     padding: 1.5rem 1rem;
+   }
+
+   .profile-frame {
+     width: 200px;
+     height: 200px;
+   }
+
+
+ }
