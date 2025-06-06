@@ -3,13 +3,17 @@
    --text-color: #ffffff;
    --accent-color: #ae63e4;
    --blur-bg: rgba(255, 255, 255, 0.05);
-  
+   --navbar-bg: rgba(11, 11, 22, 0.8);
  }
 
  body {
    background-color: var(--bg-color);
    color: var(--text-color);
    font-family: 'Poppins', sans-serif;
+ }
+ .navbar {
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
  }
 
  .navbar-brand {
