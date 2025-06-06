@@ -12,10 +12,6 @@
    font-family: 'Poppins', sans-serif;
  }
 
- .navbar {
-   backdrop-filter: blur(10px);
- }
-
  .navbar-brand {
    color: var(--accent-color) !important;
    font-weight: bold;
