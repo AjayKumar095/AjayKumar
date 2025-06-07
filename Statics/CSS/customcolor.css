@@ -90,7 +90,7 @@
  /* Smaller screens: Resize and reposition */
  @media (max-width: 768px) {
   .profile-container{
-  top: 15px !important;
+  top: 16px !important;
 }
    .element-1 {
      width: 50vw;
