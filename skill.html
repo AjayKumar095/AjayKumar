@@ -1,166 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="Statics/CSS/customcolor.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Kumar - Data Science Aspirant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Variables for clarity and easy customization */
+:root {
+    --accent-color: #ae63e4; /* A vibrant purple for accent */
+    --blur-bg: rgba(255, 255, 255, 0.05); /* Light background for glass effect */
+    --dark-bg: #1a1a2e; /* Dark background for the page */
+    --text-color: #f0f0f0; /* Light text color */
+}
 
-  <style>
-    body {
-      background-color: #0b0b16;
-      color: white;
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
-    .profile-frame {
-      width: 250px;
-      height: 250px;
-    }
+/* Glass Card Effect */
+.glass-card {
+    background: var(--blur-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Key for the glass effect */
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    border-radius: 12px; /* Slightly rounded corners */
+    padding: 1.5rem;
+    overflow: hidden; /* Important for glass effect with rounded corners */
+}
 
-    .profile-img {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 0 20px rgba(174, 99, 228, 0.5);
-    }
+/* Profile Section Styles */
+.profile-container {
+    position: relative;
+    width: 250px; /* Base size for the profile image and background */
+    height: 250px;
+    margin: 0 auto; /* Center the container horizontally */
+    margin-bottom: 40px; /* Space below when columns stack on small devices */
+}
 
-    .glass-card {
-      background: var(--blur-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      z-index: 10;
-      position: relative;
-    }
+.profile-bg {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(174, 99, 228, 0.7); /* Accent color shadow */
+    width: 100%;
+    height: 100%;
+    transform: rotate(10deg); /* Tilt effect */
+    border-radius: 15%; /* Rounded corners for the background */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Behind the image */
+}
 
-    .element {
-      border-radius: 50%;
-      filter: blur(20px);
-      opacity: 0.3;
-      position: absolute;
-      z-index: 0;
-    }
+.profile-frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Above the background */
+}
 
-    /* Desktop Sizes and Positions */
-    .element-1 {
-      width: 20vw;
-      height: 20vw;
-      top: -5%;
-      left: -5%;
-      background-color: rgb(239, 8, 124);
-    }
+.profile-img {
+    border-radius: 15%; /* Match background border-radius */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area nicely */
+    box-shadow: 0 0 20px rgba(174, 99, 228, 0.5); /* Shadow for the image itself */
+}
 
-    .element-2 {
-      width: 15vw;
-      height: 15vw;
-      bottom: 5%;
-      right: 20%;
-      background-color: rgb(0, 212, 255);
+/* Adjustments for text alignment on small vs. large screens */
+@media (max-width: 767.98px) { /* For devices smaller than md breakpoint */
+    .text-md-start {
+        text-align: center !important; /* Override Bootstrap's text-md-start */
     }
+    .justify-content-md-start {
+        justify-content: center !important; /* Override Bootstrap's justify-content-md-start */
+    }
+}
 
-    .element-3 {
-      width: 20vw;
-      height: 20vw;
-      top: 7%;
-      right: 5%;
-      background-color: rgb(255, 200, 0);
-    }
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex; /* For better alignment with gap */
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-outline-light {
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-color);
+    color: var(--dark-bg);
+}
+
+/* Optional: Minor adjustments for very small screens if needed */
+@media (max-width: 380px) {
     .profile-container {
-     top: 100px;
-    }
-
-    /* Smaller screens: Resize and reposition */
-    @media (max-width: 768px) {
-      .profile-container {
-        top: 30px;
-      }
-      .element-1 {
-        width: 50vw;
-        height: 50vw;
-        top: 0%;
-        left: -5%;
-      }
-
-      .element-2 {
-        width: 30vw;
-        height: 30vw;
-        bottom: 5%;
-        right: 10%;
-      }
-
-      .element-3 {
-        width: 35vw;
-        height: 35vw;
-        top: 40%;
-        left: 40%;
-        transform: translateX(-50%);
-      }
-
-      .glass-card {
-        padding: 1.5rem 1rem;
-      }
-
-      .profile-frame {
         width: 200px;
         height: 200px;
-      } 
+        margin-bottom: 30px;
     }
-  </style>
+}
+    </style>
 </head>
-
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Ajay Kumar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item active"><a class="nav-link" href="skill.html">Certificate</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Me</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Background elements -->
-  <div class="container mt-5 position-relative profile-container">
-    <div class="element element-1"></div>
-    <div class="element element-2"></div>
-    <div class="element element-3"></div>
+    <header class="py-3 px-4 glass-card text-center mb-5">
+        <h1 class="mb-0">My Portfolio</h1>
+    </header>
 
-    <!-- Main Card -->
-    <div class="glass-card mt-5 mb-5 rounded">
-      <div class="row pt-5 pb-5">
-        <!-- Profile -->
-        <div class="col-12 col-md-5 d-flex justify-content-center p-2">
-          <div class="profile-frame">
-            <img src="Statics/Images/sample_image_profile.png" alt="Profile" class="profile-img" />
-          </div>
+    <main class="container">
+        <div class="row pt-3 pb-3 align-items-center">
+            <div class="col-12 col-md-5 d-flex justify-content-center p-2">
+                <div class="profile-container">
+                    <div class="profile-bg"></div>
+                    <div class="profile-frame">
+                        <img src="Statics/Images/sample_image_profile.png" alt="Profile" class="profile-img" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-7 p-2 pt-4 text-center text-md-start">
+                <span style="color:greenyellow;">Data Science Aspirant</span>
+                <h2 class="mt-3">Hi, I'm <span style="color: var(--accent-color);">Ajay Kumar</span></h2>
+                <p class="mt-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci expedita saepe
+                    nam quos quam natus! Nam necessitatibus provident illum ipsum ad commodi illo, maxime possimus, nostrum
+                    laborum magni expedita!
+                </p>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                    <a href="cv.pdf" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">View Projects</a>
+                    <a href="#projects" class="btn btn-outline-light btn-sm">Download CV</a>
+                </div>
+            </div>
         </div>
 
-        <!-- Text Section -->
-        <div class="col-12 col-md-7 p-2 pt-5">
-          <span style="color:greenyellow;">Data Science Aspirant</span>
-          <h2 class="mt-3">Hi, I'm <span style="color: var(--accent-color);">Ajay Kumar</span></h2>
-          <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci expedita saepe
-            nam quos quam natus! Nam necessitatibus provident illum ipsum ad commodi illo, maxime possimus, nostrum
-            laborum magni expedita!</p>
-          <a href="cv.pdf" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">View Projects</a>
-          <a href="#projects" class="btn btn-outline-light btn-sm" >Download CV</a>
-        </div>
-      </div>
-    </div>
-  </div>
+        <hr class="my-5">
+
+        <section id="projects" class="py-5">
+            <h2 class="text-center mb-4">My Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="glass-card h-100">
+                        <h4>Project One</h4>
+                        <p>Brief description of Project One. This project focused on data analysis and visualization.</p>
+                        <a href="#" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">Learn More</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="glass-card h-100">
+                        <h4>Project Two</h4>
+                        <p>Brief description of Project Two. This project involved machine learning model deployment.</p>
+                        <a href="#" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">Learn More</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="glass-card h-100">
+                        <h4>Project Three</h4>
+                        <p>Brief description of Project Three. This project explored big data technologies.</p>
+                        <a href="#" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4 mt-5 glass-card">
+        <p>&copy; 2025 Ajay Kumar. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
