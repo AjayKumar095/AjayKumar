@@ -83,7 +83,9 @@
    right: 5%;
    background-color: rgb(255, 200, 0);
  }
-
+.profile-container{
+  margin-top: 30px;
+}
 
  /* Smaller screens: Resize and reposition */
  @media (max-width: 768px) {
