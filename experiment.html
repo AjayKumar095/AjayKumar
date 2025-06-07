@@ -3,47 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clip-Path Shape</title>
+  <title>Skills Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background: #0d0d0d;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b16;
+      color: white;
     }
 
-    .clip-box {
-      width: 90vw;
-      max-width: 900px;
-      height: 400px;
-      background: linear-gradient(to right, #ffffff, #d1d1ff);
+    .skills-section {
+      padding: 60px 10%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ae63e4;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ae63e4;
+      padding-bottom: 5px;
+    }
+
+    .skill-category {
+      margin-bottom: 50px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
       position: relative;
-      padding: 2rem;
-      clip-path: path('M40 0 H860 Q900 0 900 40 V360 Q900 400 860 400 H40 Q0 400 0 360 V40 Q0 0 40 0 Z');
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: clip-path 0.3s ease;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
     }
 
-    .clip-box h1 {
-      font-family: sans-serif;
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0%;
+      width: 100%;
+      background: var(--hover-color);
+      opacity: 0.15;
+      z-index: 0;
+      transition: height 0.4s ease;
+    }
+
+    .skill-card:hover::before {
+      height: 100%;
+    }
+
+    .skill-logo {
       font-size: 2.5rem;
-      margin: 0;
-      color: #000;
+      z-index: 1;
+      position: relative;
+      transition: transform 0.3s ease;
     }
 
-    .clip-box p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      color: #333;
+    .skill-card:hover .skill-logo {
+      transform: scale(1.2);
+    }
+
+    .progress {
+      margin-top: 15px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      height: 6px;
+      border-radius: 10px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.2s;
+      z-index: 1;
+      position: relative;
+    }
+
+    .skill-card:hover .progress {
+      opacity: 1;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: var(--progress);
+      background-color: var(--hover-color);
+    }
+
+    .skill-name {
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      z-index: 1;
+      position: relative;
     }
   </style>
 </head>
 <body>
-  <div class="clip-box">
-    <h1>UI Portfolio 2020-2021</h1>
-    <p>This is a custom clipped div with rounded, curved corners using clip-path.</p>
+  <div class="skills-section">
+
+    <div class="skill-category">
+      <h2 class="section-title">Programming Languages</h2>
+      <div class="skills-grid">
+        <div class="skill-card" style="--hover-color: #f7df1e; --progress: 90%;">
+          <div class="skill-logo">🟨</div>
+          <div class="skill-name">JavaScript</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+        <div class="skill-card" style="--hover-color: #3572A5; --progress: 85%;">
+          <div class="skill-logo">🐍</div>
+          <div class="skill-name">Python</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+        <div class="skill-card" style="--hover-color: #f34b7d; --progress: 70%;">
+          <div class="skill-logo">🚀</div>
+          <div class="skill-name">C++</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h2 class="section-title">AI / ML</h2>
+      <div class="skills-grid">
+        <div class="skill-card" style="--hover-color: #ef6c00; --progress: 80%;">
+          <div class="skill-logo">🧠</div>
+          <div class="skill-name">TensorFlow</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+        <div class="skill-card" style="--hover-color: #5c2d91; --progress: 75%;">
+          <div class="skill-logo">🤖</div>
+          <div class="skill-name">Scikit-learn</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h2 class="section-title">Tools & Platforms</h2>
+      <div class="skills-grid">
+        <div class="skill-card" style="--hover-color: #2496ed; --progress: 85%;">
+          <div class="skill-logo">🐳</div>
+          <div class="skill-name">Docker</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+        <div class="skill-card" style="--hover-color: #f05032; --progress: 90%;">
+          <div class="skill-logo">📁</div>
+          <div class="skill-name">Git</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
