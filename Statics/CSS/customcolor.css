@@ -84,16 +84,9 @@
    background-color: rgb(255, 200, 0);
  }
 
- .profile-container {
-   top: 30px;
- }
 
  /* Smaller screens: Resize and reposition */
  @media (max-width: 768px) {
-   .profile-container {
-     top: 20px;
-   }
-
    .element-1 {
      width: 50vw;
      height: 50vw;
