@@ -1,173 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0b0b16;
-      color: white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0b16;
+            --bg-color-secondary: #1a1a2a; /* Slightly adjusted to match 1a1a2e if needed, depends on font rendering */
+            --bg-color-tertiary: #16213e;
+            --text-color: #ffffff;
+            --accent-color: #ae63e4;
+            --blur-bg: rgba(255, 255, 255, 0.05);
+            --navbar-bg: rgba(11, 11, 22, 0.8);
+        }
 
-    .skills-section {
-      padding: 60px 10%;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #ae63e4;
-      text-transform: uppercase;
-      border-bottom: 2px solid #ae63e4;
-      padding-bottom: 5px;
-    }
+        .section-bg-secondary {
+            background-color: var(--bg-color-secondary);
+        }
 
-    .skill-category {
-      margin-bottom: 50px;
-    }
+        .section-bg-tertiary {
+            background-color: var(--bg-color-tertiary);
+        }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 25px;
-    }
+        .text-accent {
+            color: var(--accent-color) !important;
+        }
 
-    .skill-card {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
+        .card {
+            background-color: var(--blur-bg); /* Using blur-bg for card background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
 
-    .skill-card:hover {
-      transform: translateY(-5px);
-    }
+        .card-title {
+            color: var(--accent-color);
+        }
 
-    .skill-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 0%;
-      width: 100%;
-      background: var(--hover-color);
-      opacity: 0.15;
-      z-index: 0;
-      transition: height 0.4s ease;
-    }
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
 
-    .skill-card:hover::before {
-      height: 100%;
-    }
+        .btn-primary:hover {
+            background-color: #9d4ecc; /* Slightly darker accent for hover */
+            border-color: #9d4ecc;
+        }
 
-    .skill-logo {
-      font-size: 2.5rem;
-      z-index: 1;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
+        .hero-section {
+            padding: 100px 0;
+            background-image: url('https://via.placeholder.com/1920x600/0b0b16/ffffff?text=Data+Science+Background'); /* Placeholder image, replace with a relevant one */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 70vh; /* Make hero section taller */
+        }
 
-    .skill-card:hover .skill-logo {
-      transform: scale(1.2);
-    }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for text readability */
+            padding: 30px;
+            border-radius: 10px;
+        }
 
-    .progress {
-      margin-top: 15px;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.1);
-      height: 6px;
-      border-radius: 10px;
-      overflow: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease 0.2s;
-      z-index: 1;
-      position: relative;
-    }
-
-    .skill-card:hover .progress {
-      opacity: 1;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: var(--progress);
-      background-color: var(--hover-color);
-    }
-
-    .skill-name {
-      margin-top: 10px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      z-index: 1;
-      position: relative;
-    }
-  </style>
+        .project-card {
+            min-height: 350px; /* Ensure cards have a consistent height */
+        }
+    </style>
 </head>
 <body>
-  <div class="skills-section">
 
-    <div class="skill-category">
-      <h2 class="section-title">Programming Languages</h2>
-      <div class="skills-grid">
-        <div class="skill-card" style="--hover-color: #f7df1e; --progress: 90%;">
-          <div class="skill-logo">🟨</div>
-          <div class="skill-name">JavaScript</div>
-          <div class="progress"><div class="progress-bar"></div></div>
+    <section id="hero" class="hero-section text-white">
+        <div class="container hero-content">
+            <h1 class="display-3 fw-bold mb-4">Hi, I'm <span class="text-accent"> [Your Name]</span></h1>
+            <p class="lead mb-4">A passionate Data Scientist dedicated to extracting insights and building intelligent solutions from complex data.</p>
+            <a href="#projects" class="btn btn-primary btn-lg me-3">View My Projects</a>
+            <a href="#about" class="btn btn-outline-light btn-lg">Learn More About Me</a>
         </div>
-        <div class="skill-card" style="--hover-color: #3572A5; --progress: 85%;">
-          <div class="skill-logo">🐍</div>
-          <div class="skill-name">Python</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-        </div>
-        <div class="skill-card" style="--hover-color: #f34b7d; --progress: 70%;">
-          <div class="skill-logo">🚀</div>
-          <div class="skill-name">C++</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="skill-category">
-      <h2 class="section-title">AI / ML</h2>
-      <div class="skills-grid">
-        <div class="skill-card" style="--hover-color: #ef6c00; --progress: 80%;">
-          <div class="skill-logo">🧠</div>
-          <div class="skill-name">TensorFlow</div>
-          <div class="progress"><div class="progress-bar"></div></div>
+    <section id="projects" class="section-bg-secondary py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-4 fw-bold"><span class="text-accent">My</span> Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="https://via.placeholder.com/400x250/1a1a2e/ffffff?text=Project+1+Image" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Churn Prediction</h5>
+                            <p class="card-text">Developed a machine learning model to predict customer churn for a telecom company, leading to targeted retention strategies.</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="https://via.placeholder.com/400x250/1a1a2e/ffffff?text=Project+2+Image" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis of Social Media</h5>
+                            <p class="card-text">Performed sentiment analysis on Twitter data to understand public opinion on a specific product, using NLP techniques.</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="https://via.placeholder.com/400x250/1a1a2e/ffffff?text=Project+3+Image" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Forecasting Dashboard</h5>
+                            <p class="card-text">Built an interactive dashboard using Python and Tableau to forecast sales, providing key insights for business decisions.</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
         </div>
-        <div class="skill-card" style="--hover-color: #5c2d91; --progress: 75%;">
-          <div class="skill-logo">🤖</div>
-          <div class="skill-name">Scikit-learn</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="skill-category">
-      <h2 class="section-title">Tools & Platforms</h2>
-      <div class="skills-grid">
-        <div class="skill-card" style="--hover-color: #2496ed; --progress: 85%;">
-          <div class="skill-logo">🐳</div>
-          <div class="skill-name">Docker</div>
-          <div class="progress"><div class="progress-bar"></div></div>
+    <section id="about" class="section-bg-tertiary py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-4 fw-bold"><span class="text-accent">About</span> Me & Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="lead mb-4">
+                        I am a Data Scientist with a strong foundation in machine learning, statistical modeling, and data visualization. My passion lies in transforming raw data into actionable insights and building robust, scalable data-driven solutions. I have experience with Python, R, SQL, and various data science libraries and tools.
+                    </p>
+                    <p class="lead mb-4">
+                        I'm always eager to connect and collaborate on exciting data science projects. Feel free to reach out!
+                    </p>
+                    <ul class="list-unstyled d-flex justify-content-center gap-4 fs-3">
+                        <li><a href="mailto:your.email@example.com" class="text-white"><i class="bi bi-envelope-fill"></i></a></li>
+                        <li><a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="https://github.com/yourprofile" target="_blank" class="text-white"><i class="bi bi-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="skill-card" style="--hover-color: #f05032; --progress: 90%;">
-          <div class="skill-logo">📁</div>
-          <div class="skill-name">Git</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </body>
 </html>
