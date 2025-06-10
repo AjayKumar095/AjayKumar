@@ -3,192 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Kumar - Data Science Aspirant</title>
+    <title>Portfolio - Education Timeline</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-      /* Variables for clarity and easy customization */
-:root {
-    --accent-color: #ae63e4; /* A vibrant purple for accent */
-    --blur-bg: rgba(255, 255, 255, 0.05); /* Light background for glass effect */
-    --dark-bg: #1a1a2e; /* Dark background for the page */
-    --text-color: #f0f0f0; /* Light text color */
-}
+        :root {
+            --bg-color: #0b0b16;
+            --bg-color-secondary: #1a1a2e;
+            --bg-color-tertiary: #16213e;
+            --text-color: #ffffff;
+            --accent-color: #ae63e4;
+            --blur-bg: rgba(255, 255, 255, 0.05);
+            --navbar-bg: rgba(11, 11, 22, 0.8);
+            --link-color: yellowgreen;
+        }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* Glass Card Effect */
-.glass-card {
-    background: var(--blur-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px); /* Key for the glass effect */
-    -webkit-backdrop-filter: blur(15px); /* For Safari support */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
-    border-radius: 12px; /* Slightly rounded corners */
-    padding: 1.5rem;
-    overflow: hidden; /* Important for glass effect with rounded corners */
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-shadow: 0 0 15px rgba(174, 99, 228, 0.5);
+            position: relative;
+            animation: fadeInDown 1s ease-out;
+        }
 
-/* Profile Section Styles */
-.profile-container {
-    position: relative;
-    width: 250px; /* Base size for the profile image and background */
-    height: 250px;
-    margin: 0 auto; /* Center the container horizontally */
-    margin-bottom: 40px; /* Space below when columns stack on small devices */
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            margin: 15px auto 0;
+            border-radius: 3px;
+            animation: expandLine 1.5s ease-out;
+        }
 
-.profile-bg {
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 0 30px rgba(174, 99, 228, 0.7); /* Accent color shadow */
-    width: 100%;
-    height: 100%;
-    transform: rotate(10deg); /* Tilt effect */
-    border-radius: 15%; /* Rounded corners for the background */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Behind the image */
-}
+        /* --- Timeline Specific Styles --- */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px; /* Add some padding on sides */
+        }
 
-.profile-frame {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2; /* Above the background */
-}
+        /* The actual timeline (vertical line) */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px; /* Center the line */
+            border-radius: 2px;
+        }
 
-.profile-img {
-    border-radius: 15%; /* Match background border-radius */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image covers the area nicely */
-    box-shadow: 0 0 20px rgba(174, 99, 228, 0.5); /* Shadow for the image itself */
-}
+        /* Container for timeline items */
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0; /* Hidden by default for animation */
+            transform: translateY(30px); /* Start slightly below for animation */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
 
-/* Adjustments for text alignment on small vs. large screens */
-@media (max-width: 767.98px) { /* For devices smaller than md breakpoint */
-    .text-md-start {
-        text-align: center !important; /* Override Bootstrap's text-md-start */
-    }
-    .justify-content-md-start {
-        justify-content: center !important; /* Override Bootstrap's justify-content-md-start */
-    }
-}
+        /* Show the container with animation */
+        .timeline-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* Buttons */
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-flex; /* For better alignment with gap */
-    align-items: center;
-    justify-content: center;
-}
+        /* The circles on the timeline */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px; /* Adjust to align with line */
+            background-color: var(--accent-color);
+            border: 4px solid var(--bg-color-secondary); /* Border for emphasis */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--accent-color); /* Glow effect around circle */
+        }
 
-.btn-sm {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-}
+        /* Place the timeline containers to the left and right of the vertical line */
+        .timeline-container.left {
+            left: 0;
+            text-align: right;
+        }
 
-.btn-outline-light {
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
-    background-color: transparent;
-}
+        .timeline-container.right {
+            left: 50%;
+        }
 
-.btn-outline-light:hover {
-    background-color: var(--text-color);
-    color: var(--dark-bg);
-}
+        /* Fix the circle for containers on the left side */
+        .timeline-container.left::after {
+            left: -17px;
+        }
 
-/* Optional: Minor adjustments for very small screens if needed */
-@media (max-width: 380px) {
-    .profile-container {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 30px;
-    }
-}
+        /* The glassmorphism card */
+        .timeline-content {
+            background-color: var(--blur-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 1.8rem 2.2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            z-index: 0; /* Ensures content is behind circle */
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-content h5 {
+            color: var(--accent-color);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content .degree {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content .major {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .dates {
+            font-size: 0.9rem;
+            color: var(--link-color);
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-content ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+            top: -1px;
+        }
+
+        .btn-custom-accent {
+            background: linear-gradient(45deg, var(--accent-color), darken(#ae63e4, 15%));
+            border: none;
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(174, 99, 228, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem; /* Adjust margin for button */
+        }
+
+        .btn-custom-accent:hover {
+            background: linear-gradient(45deg, darken(#ae63e4, 10%), var(--accent-color));
+            box-shadow: 0 6px 20px rgba(174, 99, 228, 0.6);
+            transform: translateY(-3px);
+            color: var(--text-color);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes expandLine {
+            from { width: 0; }
+            to { width: 120px; }
+        }
+
+        /* --- Responsive Timeline --- */
+        @media screen and (max-width: 767.98px) {
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 3rem;
+            }
+
+            /* The timeline (vertical line) on small screens */
+            .timeline::after {
+                left: 31px; /* Align to the left side */
+            }
+
+            /* Full-width container on small screens */
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px; /* Space for circle */
+                padding-right: 25px;
+            }
+
+            /* Adjust circle position for all items on small screens */
+            .timeline-container::after {
+                left: 15px; /* Aligned with the vertical line */
+                top: 22px; /* Adjust slightly for better alignment */
+                right: auto; /* Remove right property */
+            }
+
+            /* Remove text alignment for left items on small screens */
+            .timeline-container.left {
+                text-align: left;
+            }
+
+            /* Remove left property for right items on small screens */
+            .timeline-container.right {
+                left: 0%;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .timeline-content h5 {
+                font-size: 1.3rem;
+            }
+            .timeline-content .degree {
+                font-size: 1.05rem;
+            }
+            .timeline-content .major {
+                font-size: 0.95rem;
+            }
+            .timeline-content .dates {
+                font-size: 0.8rem;
+            }
+            .timeline-content ul li {
+                font-size: 0.85rem;
+                padding-left: 1.2rem;
+            }
+            .timeline-content ul li::before {
+                font-size: 1rem;
+                top: 0px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <header class="py-3 px-4 glass-card text-center mb-5">
-        <h1 class="mb-0">My Portfolio</h1>
-    </header>
+    <section id="education" class="py-5">
+        <div class="container py-md-5">
+            <h2 class="section-title">My Academic Journey</h2>
 
-    <main class="container">
-        <div class="row pt-3 pb-3 align-items-center">
-            <div class="col-12 col-md-5 d-flex justify-content-center p-2">
-                <div class="profile-container">
-                    <div class="profile-bg"></div>
-                    <div class="profile-frame">
-                        <img src="Statics/Images/sample_image_profile.png" alt="Profile" class="profile-img" />
+            <div class="timeline">
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h5>Sonipat University</h5>
+                        <p class="degree">Master of Technology (M.Tech)</p>
+                        <p class="major">Data Science and Artificial Intelligence</p>
+                        <span class="dates">August 2023 - July 2025 (Expected)</span>
+                        <ul>
+                            <li>**Cutting-edge Curriculum:** Deep dive into Advanced ML, DL, Big Data, NLP, Computer Vision.</li>
+                            <li>**Impactful Thesis:** Focusing on "Predictive Modeling for Climate Change Impacts using Satellite Imagery."</li>
+                            <li>**Academic Excellence:** Consistently maintained a strong CGPA of 9.2/10.0.</li>
+                        </ul>
+                        <a href="#" class="btn btn-custom-accent">View Certificate</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-md-7 p-2 pt-4 text-center text-md-start">
-                <span style="color:greenyellow;">Data Science Aspirant</span>
-                <h2 class="mt-3">Hi, I'm <span style="color: var(--accent-color);">Ajay Kumar</span></h2>
-                <p class="mt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci expedita saepe
-                    nam quos quam natus! Nam necessitatibus provident illum ipsum ad commodi illo, maxime possimus, nostrum
-                    laborum magni expedita!
-                </p>
-                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
-                    <a href="cv.pdf" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">View Projects</a>
-                    <a href="#projects" class="btn btn-outline-light btn-sm">Download CV</a>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h5>Delhi Institute of Technology</h5>
+                        <p class="degree">Bachelor of Technology (B.Tech)</p>
+                        <p class="major">Computer Science Engineering</p>
+                        <span class="dates">August 2019 - July 2023</span>
+                        <ul>
+                            <li>**Core CS Mastery:** Strong foundation in Data Structures & Algorithms, DBMS, OOP.</li>
+                            <li>**Innovative Project:** Developed an E-commerce Recommendation System using Collaborative Filtering.</li>
+                            <li>**Honors Graduate:** Completed with Distinction, achieving a CGPA of 8.8/10.0.</li>
+                        </ul>
+                        <a href="#" class="btn btn-custom-accent">View Certificate</a>
+                    </div>
                 </div>
-            </div>
+
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h5>Coursera / deeplearning.ai</h5>
+                        <p class="degree">Deep Learning Specialization</p>
+                        <p class="major">Instructor: Andrew Ng</p>
+                        <span class="dates">September 2022 - December 2022</span>
+                        <ul>
+                            <li>**Comprehensive DL:** Covered Neural Networks, CNNs, RNNs, and ML Project Structuring.</li>
+                            <li>**Hands-on Application:** Gained practical experience with TensorFlow and Keras.</li>
+                            <li>**Problem-Solving:** Applied deep learning models to solve real-world challenges.</li>
+                        </ul>
+                        <a href="#" class="btn btn-custom-accent">View Certificate</a>
+                    </div>
+                </div>
+
+                </div>
         </div>
-
-        <hr class="my-5">
-
-        <section id="projects" class="py-5">
-            <h2 class="text-center mb-4">My Projects</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col">
-                    <div class="glass-card h-100">
-                        <h4>Project One</h4>
-                        <p>Brief description of Project One. This project focused on data analysis and visualization.</p>
-                        <a href="#" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">Learn More</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="glass-card h-100">
-                        <h4>Project Two</h4>
-                        <p>Brief description of Project Two. This project involved machine learning model deployment.</p>
-                        <a href="#" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">Learn More</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="glass-card h-100">
-                        <h4>Project Three</h4>
-                        <p>Brief description of Project Three. This project explored big data technologies.</p>
-                        <a href="#" class="btn btn-sm" style="background: var(--accent-color); color: #fff;">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="text-center py-4 mt-5 glass-card">
-        <p>&copy; 2025 Ajay Kumar. All rights reserved.</p>
-    </footer>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to trigger animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineContainers = document.querySelectorAll('.timeline-container');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the item is visible
+
+            timelineContainers.forEach(container => {
+                observer.observe(container);
+            });
+        });
+    </script>
 </body>
 </html>
