@@ -6,6 +6,7 @@
    --accent-color: #ae63e4;
    --blur-bg: rgba(255, 255, 255, 0.05);
    --navbar-bg: rgba(11, 11, 22, 0.8);
+   --link-color: yellowgreen;
  }
 
  body {
@@ -30,6 +31,14 @@
    color: var(--accent-color) !important;
 
  }
+ .custom-link{
+  text-decoration: none;
+  cursor: pointer;
+ }
+ .custom-link:hover{
+  text-decoration: underline;
+ }
+
 
  .profile-frame {
    width: 250px;
@@ -57,7 +66,7 @@
  
 .profile-container{
 
-  transform: translateY(40px);
+  transform: translateY(70px);
 }
 .custom-frame-bg {
   border: 2px solid var(--accent-color);
@@ -66,18 +75,17 @@
   height:100%;
   z-index:-1;
   transform: rotate(10deg);
+  box-shadow: 0 0 5px 5px var(--accent-color);
 }
 
  /* Smaller screens: Resize and reposition */
  @media (max-width: 768px) {
   .profile-container{
-   transform: translateY(20px);
+   transform: translateY(40px);
 }
   
    .profile-frame {
      width: 200px;
      height: 200px;
    }
-
-
  }
