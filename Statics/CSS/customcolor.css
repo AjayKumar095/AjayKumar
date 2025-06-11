@@ -6,7 +6,6 @@
    --accent-color: #ae63e4;
    --blur-bg: rgba(255, 255, 255, 0.05);
    --navbar-bg: rgba(11, 11, 22, 0.8);
-   --link-color: yellowgreen;
  }
 
  body {
@@ -69,7 +68,6 @@
   transform: translateY(70px);
 }
 .custom-frame-bg {
-  border: 2px solid var(--accent-color);
   border-radius: 15%;
   width: 100%;
   height:100%;
