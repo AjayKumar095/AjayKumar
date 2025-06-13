@@ -68,9 +68,8 @@
    border: 1px solid rgba(255, 255, 255, 0.1);
    backdrop-filter: blur(15px);
    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-   padding: 2rem;
    z-index: 10;
-   position: relative;
+  
  }
 
 
@@ -179,3 +178,18 @@
      height: 200px;
    }
  }
+
+ .certificate-bg-element{
+    z-index: -1;
+    background-image: url('../Images/SVG/ccchaos.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  
+ }
+ .bg-element-1{
+   width: 50vw;
+    height: 50vw;
+     transform: translate(-10%, -10%);
+ }
+
