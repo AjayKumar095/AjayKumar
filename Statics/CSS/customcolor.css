@@ -9,9 +9,9 @@
  }
    .bg-custom{
       background-image: url('../Images/SVG/cccircular-top.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100%;
+      background-repeat: repeat;
+      background-size: auto;
+      min-height: 100vh;
       z-index: -1;
       position: absolute;
     }
@@ -179,17 +179,16 @@
    }
  }
 
- .certificate-bg-element{
+.certificate-bg-element {
     z-index: -1;
-    background-image: url('../Images/SVG/ccchaos.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('../Images/SVG/Doddle.svg');
+    background-size: 300px 300px; 
+    background-repeat: repeat;
+    position: absolute;  
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transform: translateY(50px);
     
-  
- }
- .bg-element-1{
-   width: 50vw;
-    height: 50vw;
-     transform: translate(-10%, -10%);
- }
+}
 
