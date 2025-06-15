@@ -5,7 +5,7 @@
    --text-color: #ffffff;
    --accent-color: #ae63e4;
    --blur-bg: rgba(255, 255, 255, 0.05);
-   --navbar-bg: rgba(11, 11, 22, 0.8);
+   --navbar-bg: rgba(11, 11, 22);
  }
    .bg-custom{
       background-image: url('../Images/SVG/cccircular-top.svg');
@@ -66,10 +66,16 @@
  .glass-card {
    background: var(--blur-bg);
    border: 1px solid rgba(255, 255, 255, 0.1);
-   backdrop-filter: blur(15px);
+   backdrop-filter: blur(1px);
    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
    z-index: 10;
   
+ }
+ .glass-card:hover {
+
+  box-shadow: 0 12px 32px rgba(174, 99, 228, 0.3);
+   transform: translateY(-4px);
+   transition: transform 0.3s, box-shadow 0.3s;
  }
 
 
@@ -187,8 +193,7 @@
     position: absolute;  
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-   
+    opacity: 0.6;
     left: -1%;
     
 }
