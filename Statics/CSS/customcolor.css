@@ -180,18 +180,8 @@
    }
  }
 
-.certificate-bg-element {
-    z-index: -1;
-    background-image: url('../Images/SVG/Hexagon-pattern.svg');
-    background-size: 500px 500px; 
-    background-repeat: repeat;
-    position: absolute;  
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-    left: -1%;
-    
-}
+
+  
     .stats-container {
       
      
@@ -290,4 +280,7 @@
       background-color: var(--bg-color);
     }
 
-  
+  .skill-card {
+    
+    background-color: var(--bg-color-tertiary);
+  }
