@@ -276,11 +276,4 @@
       transform: scale(1.05);
     }
 
-    .skill-container {
-      background-color: var(--bg-color);
-    }
-
-  .skill-card {
-    
-    background-color: var(--bg-color-tertiary);
-  }
+  
