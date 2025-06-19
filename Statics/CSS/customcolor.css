@@ -286,3 +286,8 @@
       transform: scale(1.05);
     }
 
+    .skill-container {
+      background-color: var(--bg-color);
+    }
+
+  
