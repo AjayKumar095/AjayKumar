@@ -249,7 +249,7 @@
     .quote-box::before,
     .quote-box::after {
       font-size: 2.5rem;
-      color: var(--accent-color);
+      color: var(--success-color);
       font-family: Georgia, serif;
       position: absolute;
     }
