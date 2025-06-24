@@ -41,6 +41,9 @@ body {
   color: var(--accent-color) !important;
 
 }
+.active {
+  color: var(--accent-color) !important;
+}
 
 .custom-link {
   text-decoration: none;
