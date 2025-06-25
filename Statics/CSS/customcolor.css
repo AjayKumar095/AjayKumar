@@ -158,6 +158,11 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.no-hover{
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 
 /* Responsive styles for profile section */
 /* Timeline section styles */
