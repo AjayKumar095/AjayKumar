@@ -162,7 +162,9 @@ body {
   box-shadow: none !important;
   transform: none !important;
 }
-
+.no-shadow{
+  box-shadow: none !important;
+}
 
 /* Responsive styles for profile section */
 /* Timeline section styles */
