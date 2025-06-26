@@ -38,50 +38,91 @@
   </nav>
 
   <!-- End Navbar -->
-  <div class=" container-fluid pt-5 mt-5 mb-5 pb-5">
+ <div class="container-fluid pt-5 mt-5 mb-5 pb-5">
+  <h1 class="text-center pb-2">
+    <strong>Get in <span style="color: var(--accent-color);">Touch</span></strong>
+  </h1>
+  <h5 class="text-center pb-5">
+    I'm always open to discussing data science projects, opportunities, or just having a <br>
+    chat about the latest in AI and machine learning.
+  </h5>
 
-    <h1 class="text-center pb-2"><strong>Get in <span style="color: var(--accent-color);">Touch</span></strong></h1>
-    <h5 class="text-center pb-5">I'm always open to discussing data science projects, opportunities, or just having a
-      <br> chat about the latest in AI and machine learning.</h5>
+  <div class="container">
+    <div class="row justify-content-center align-items-stretch g-4">
+      <!-- Contact Info Section -->
+      <div class="col-lg-5 col-md-12">
+        <div class="glass-card p-4 h-100 rounded">
+          <h4 class="pb-3">
+            <span style="text-decoration: underline 3px var(--accent-color); text-underline-offset: 10px;">
+              Contact
+            </span>
+            Information
+          </h4>
 
-    <div class="container d-flex justify-content-center aligh-item-center">
-      <div class="row p-1 d-flex justify-content-center aligh-item-center" style="width: 100%; height: 600px;">
-        <div class="col-md mb-4 d-block justify-content-center aligh-item-center">
-          <div class="row m-1 mb-4 p-2  glass-card no-hover rounded" style="width: 100%; height: 45%;">
-            <h4 class="text-start pb-3"><span style="text-decoration: 3px solid var(--accent-color) underline;">Contact</span> Information</h4>
-            <i class="bi bi-envelope-fill"></i>
+          <div class="contact-item d-flex align-items-start mb-4">
+            <div class="icon me-3">&#9993;</div>
+            <div>
+              <small>Email</small><br>
+              yourname@example.com
+            </div>
           </div>
-          <div class="row m-1 glass-card no-hover rounded" style="width: 100%; height: 45%;"></div>
-        </div>
-        <div class="col-md m-3 mt-1 p-3 glass-card no-hover rounded">
 
-          <h3 class="text-start pb-3"><span style="text-decoration: 3px solid var(--accent-color) underline;">Send</span> Me a Message</h3>
+          <div class="contact-item d-flex align-items-start mb-4">
+            <div class="icon me-3">&#9742;</div>
+            <div>
+              <small>Phone</small><br>
+              +1 (234) 567-890
+            </div>
+          </div>
+
+          <div class="contact-item d-flex align-items-start">
+            <div class="icon me-3">&#128205;</div>
+            <div>
+              <small>Location</small><br>
+              San Francisco, CA
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form Section -->
+      <div class="col-lg-7 col-md-12">
+        <div class="glass-card p-4 h-100 rounded">
+          <h4 class="pb-3">
+            <span style="text-decoration: underline 3px var(--accent-color); text-underline-offset: 10px;">
+              Send 
+            </span>
+            Me a Message
+          </h4>
           <form class="row g-3" data-bs-theme="dark">
             <div class="col-md-6">
               <label for="inputName" class="form-label">Name</label>
-              <input type="text" class="form-control" id="inputName">
+              <input type="text" class="form-control" id="inputName" placeholder="Your Name">
             </div>
             <div class="col-md-6">
               <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail">
+              <input type="email" class="form-control" id="inputEmail" placeholder="you@example.com">
             </div>
             <div class="col-12">
               <label for="inputSubject" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="inputSubject" >
+              <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
             </div>
             <div class="col-12">
               <label for="inputMessage" class="form-label">Message</label>
-             <textarea name="message" class="form-control" id="inputMessage" style="height: 200px;"></textarea>
-             
+              <textarea class="form-control" id="inputMessage" style="height: 200px;" placeholder="Your message here..."></textarea>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn form-control"  style="background: var(--accent-color); color: #fff;">Send Message</button>
+              <button type="submit" class="btn w-100" style="background: var(--accent-color); color: #fff;">
+                Send Message
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
 </body>
 
