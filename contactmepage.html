@@ -133,7 +133,7 @@
             </h4>
             <form class="row g-3" data-bs-theme="dark" action="https://formsubmit.co/jaykumar002kori@gmail.com"
               method="POST">
-              <input type="hidden" name="_next" value="https://ajaykumar095.github.io/AjayKumar/contactmepage.html?success=true">
+              <input type="hidden" name="_next" value="https://ajaykumar095.github.io/AjayKumar/contactmepage.html?success=1">
 
               <!-- Optional: Disable CAPTCHA -->
               <input type="hidden" name="_captcha" value="false">
@@ -178,16 +178,19 @@
       <h4 class="text-center" style="color: var(--accent-color);">Ajay Kumar</h4>
     </div>
   </div>
- <script>
+
+<script>
+  // Show alert only if ?submitted=1 is present in the URL
   window.onload = function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("success") === "true") {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("submitted") === "1") {
       alert("✅ Your message has been sent successfully!");
-      // Optional: Remove the query param so the alert doesn't repeat
-      history.replaceState(null, null, window.location.pathname);
+      // Remove the query param so it doesn't trigger again on refresh
+      window.history.replaceState({}, document.title, window.location.pathname);
     }
   };
 </script>
+
 
 </body>
 
