@@ -170,6 +170,7 @@ body {
   width: 150px;
   height: 150px;
   cursor: pointer;
+  background-color: var(--bg-color-tertiary) !important;
 }
 .skill-logo {
   width: 60px;
