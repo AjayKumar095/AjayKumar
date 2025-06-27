@@ -156,7 +156,7 @@
                   placeholder="Your message here..."></textarea>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn w-100" style="background: var(--accent-color); color: #fff;" onclick="alert('Thank you for your message! I will get back to you soon.')">
+                <button type="submit" class="btn w-100" style="background: var(--accent-color); color: #fff;" >
                   Send Message
                 </button>
               </div>
@@ -178,6 +178,12 @@
       <h4 class="text-center" style="color: var(--accent-color);">Ajay Kumar</h4>
     </div>
   </div>
+ <script>
+    // Show alert on page load
+    window.onload = function () {
+      alert("✅ Your message has been sent successfully!");
+    };
+  </script>
 </body>
 
 </html>
