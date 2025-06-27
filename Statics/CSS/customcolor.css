@@ -166,6 +166,17 @@ body {
   box-shadow: none !important;
 }
 
+.skill-card {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.skill-logo {
+  width: 60px;
+  height: 60px;
+  justify-self: center;
+  display: flex;
+  }
 /* Responsive styles for profile section */
 /* Timeline section styles */
 /* Timeline section background and title styles */
