@@ -180,7 +180,7 @@
   </div>
 
 <script>
-  // Show alert only if ?submitted=1 is present in the URL
+  // Show alert only if ?success=1 is present in the URL
   window.onload = function () {
     const params = new URLSearchParams(window.location.search);
     if (params.get("success") === "1") {

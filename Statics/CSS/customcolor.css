@@ -184,14 +184,7 @@ body {
 
 .timeline-section {
   padding: 60px 20px;
-  background-color: #1a1a2e;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ae63e4;
-  margin-bottom: 50px;
+  background-color: var(--bg-color);
 }
 
 .timeline-line {
@@ -224,7 +217,7 @@ body {
 }
 
 .timeline-content {
-  background-color: #16213e;
+  background-color: var(--blur-bg);
   border-left: 4px solid #ae63e4;
   padding: 20px;
   border-radius: 10px;
