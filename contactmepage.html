@@ -133,7 +133,7 @@
             </h4>
             <form class="row g-3" data-bs-theme="dark" action="https://formsubmit.co/jaykumar002kori@gmail.com"
               method="POST">
-              <input type="hidden" name="_next" value="https://ajaykumar095.github.io/AjayKumar/contactmepage.html">
+              <input type="hidden" name="_next" value="https://ajaykumar095.github.io/AjayKumar/contactmepage.html?success=true">
 
               <!-- Optional: Disable CAPTCHA -->
               <input type="hidden" name="_captcha" value="false">
@@ -179,11 +179,16 @@
     </div>
   </div>
  <script>
-    // Show alert on page load
-    window.onload = function () {
+  window.onload = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("success") === "true") {
       alert("✅ Your message has been sent successfully!");
-    };
-  </script>
+      // Optional: Remove the query param so the alert doesn't repeat
+      history.replaceState(null, null, window.location.pathname);
+    }
+  };
+</script>
+
 </body>
 
 </html>
