@@ -55,17 +55,44 @@
         <!-- projects cards -->
         
         <!-- project 1 -->
-          <div class="card mb-3 p-4 glass-card" style="max-width: 100%;">
+          <div class="card mb-3 p-4 glass-card no-hover" style="max-width: 100%;">
             <div class="row g-0">
-              <div class="col-md-4">
+              <div class="col-md-4 d-flex align-items-center justify-content-center">
                 <img src="Statics/Images/SVG/fakenews-project.svg" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title" style="color: var(--accent-color);">Fake New Classification</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  <h4 class="card-title" style="color: var(--accent-color);">Fake New Classification</h4>
+
+                  <p class="card-text">This project is designed to classify news articles as Fake or Real
+                     using various machine learning models. The dataset is processed using TF-IDF
+                      vectorization, and multiple models including Naïve Bayes (NB), Random Forest (RF),
+                       and Logistic Regression (LR) are trained. The best model is selected based on
+                        performance metrics. </p>
+
+                  <ul>
+                    <li>Custom ETL Pipeline: Data cleaning, preprocessing (lemmatization & stopword removal using NLTK).</li>
+                    <li>Model Training & Evaluation: Comparing multiple models to choose the best.</li>
+                    <li>Flask-based Web Interface: User-friendly UI for news classification.</li>
+                    <li>Custom Logger: Logging for debugging and tracking the process.</li>
+                  </ul>      
+                  
+                  <h5>Tech Stack</h5>
+                  <div>
+                  <span class="badge custom-badge">Python</span>
+                  <span class="badge custom-badge">Flask</span>
+                  <span class="badge custom-badge">Scikit-learn</span>
+                  <span class="badge custom-badge">Pandas</span>
+                  <span class="badge custom-badge">NumPy</span>
+                  <span class="badge custom-badge">NLP</span>
+                  <span class="badge custom-badge">TF-IDF</span>
+                  <span class="badge custom-badge">HTML</span>
+                  <span class="badge custom-badge">CSS</span>
+                  </div>
+                  <hr>
+                 <div>
+                  <span><a href="" class="btn cta-btn float-end">Source Code</a></span>
+                 </div>
                 </div>
               </div>
             </div>
@@ -109,7 +136,5 @@
 
     </div>
   </div>
-
 </body>
-
 </html>
