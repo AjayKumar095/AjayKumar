@@ -337,3 +337,8 @@ body {
     flex-direction: row;
   }
 }
+
+
+.project-img {
+   height: 200px;
+}
