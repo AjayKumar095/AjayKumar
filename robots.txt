@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://ajaykumar095.github.io/AjayKumar/sitemap.xml
