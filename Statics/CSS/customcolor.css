@@ -365,3 +365,7 @@ body {
   color: var(--text-color);
   border: 1px solid rgba(0, 254, 4, 0.5);
 }
+
+.progress {
+  display: none !important;
+}
